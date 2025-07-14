@@ -391,620 +391,419 @@
             color: #312E81;
         }
         .floating-hearts {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .heart {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 1.5rem;
-      animation: float 6s ease-in-out infinite;
-    }
-    .heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-    .heart:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
-    .heart:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
-    .heart:nth-child(4) { top: 80%; left: 70%; animation-delay: 1s; }
-    .heart:nth-child(5) { top: 30%; left: 90%; animation-delay: 3s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(180deg); }
-    }
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+        .heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+        .heart:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
+        .heart:nth-child(4) { top: 80%; left: 70%; animation-delay: 1s; }
+        .heart:nth-child(5) { top: 30%; left: 90%; animation-delay: 3s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
     
-    .footer {
-      background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
-      padding: 3rem 2rem;
-      text-align: center;
-      margin-top: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
+        .footer {
+            background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
     
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      animation: shimmer 3s ease-in-out infinite;
-    }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
     
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
     
-    .footer p {
-      font-size: 1.3rem;
-      color: #6D28D9;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-      position: relative;
-      z-index: 2;
-    }
+        .footer p {
+            font-size: 1.3rem;
+            color: #6D28D9;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
     
-    .signature {
-      font-size: 2rem;
-      color: #8B5CF6;
-      font-family: 'Brush Script MT', cursive;
-      margin: 1.5rem 0;
-      position: relative;
-      z-index: 2;
-      animation: signatureGlow 2s ease-in-out infinite alternate;
-    }
+        .signature {
+            font-size: 2rem;
+            color: #8B5CF6;
+            font-family: 'Brush Script MT', cursive;
+            margin: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+            animation: signatureGlow 2s ease-in-out infinite alternate;
+        }
     
-    @keyframes signatureGlow {
-      from { text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
-      to { text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6); }
-    }
+        @keyframes signatureGlow {
+            from { text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+            to { text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6); }
+        }
     
-    .next-chapter {
-      font-size: 1.1rem;
-      color: #7C3AED;
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 25px;
-      display: inline-block;
-      position: relative;
-      z-index: 2;
-      animation: nextChapterPulse 3s ease-in-out infinite;
-    }
+        .next-chapter {
+            font-size: 1.1rem;
+            color: #7C3AED;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 25px;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            animation: nextChapterPulse 3s ease-in-out infinite;
+        }
     
-    @keyframes nextChapterPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
+        @keyframes nextChapterPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
     
-    .love-quote {
-      font-size: 1.1rem;
-      color: #6D28D9;
-      margin: 2rem 0;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 15px;
-      border-left: 4px solid #8B5CF6;
-      position: relative;
-      z-index: 2;
-      font-style: italic;
-    }
+        .love-quote {
+            font-size: 1.1rem;
+            color: #6D28D9;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border-left: 4px solid #8B5CF6;
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+        }
     
-    .love-quote::before {
-      content: '"';
-      font-size: 3rem;
-      position: absolute;
-      top: -10px;
-      left: 10px;
-      color: #A855F7;
-      opacity: 0.5;
-    }
+        .love-quote::before {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            color: #A855F7;
+            opacity: 0.5;
+        }
     
-    .love-quote::after {
-      content: '"';
-      font-size: 3rem;
-      position: absolute;
-      bottom: -20px;
-      right: 10px;
-      color: #A855F7;
-      opacity: 0.5;
-    }
+        .love-quote::after {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            bottom: -20px;
+            right: 10px;
+            color: #A855F7;
+            opacity: 0.5;
+        }
     
-    .decorative-element {
-      position: absolute;
-      font-size: 2rem;
-      opacity: 0.3;
-      animation: decorativeFloat 4s ease-in-out infinite;
-    }
+        .decorative-element {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: decorativeFloat 4s ease-in-out infinite;
+        }
     
-    .decorative-element.top-left {
-      top: 20px;
-      left: 20px;
-    }
+        .decorative-element.top-left {
+            top: 20px;
+            left: 20px;
+        }
     
-    .decorative-element.bottom-right {
-      bottom: 20px;
-      right: 20px;
-    }
+        .decorative-element.bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
     
-    @keyframes decorativeFloat {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(5deg); }
-    }
+        @keyframes decorativeFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
     
-    .eternal-promise {
-      background: linear-gradient(45deg, #8B5CF6, #A855F7);
-      color: white;
-      padding: 2rem;
-      border-radius: 20px;
-      margin: 2rem 0;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-    }
+        .eternal-promise {
+            background: linear-gradient(45deg, #8B5CF6, #A855F7);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }     
     
-    .eternal-promise h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
+        .eternal-promise h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
     
-    .eternal-promise p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin: 0;
-      color: rgba(255, 255, 255, 0.95);
-    }
+        .eternal-promise p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.95);
+        }
     
-    .interactive-heart {
-      font-size: 2rem;
-      color: #E879F9;
-      cursor: pointer;
-      display: inline-block;
-      margin: 0 10px;
-      transition: all 0.3s ease;
-      animation: heartbeat 1.5s ease-in-out infinite;
-    }
+        .interactive-heart {
+            font-size: 2rem;
+            color: #E879F9;
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
     
-    .interactive-heart:hover {
-      transform: scale(1.3);
-      color: #F472B6;
-    }
+        .interactive-heart:hover {
+            transform: scale(1.3);
+            color: #F472B6;
+        }
     
-    .interactive-heart.clicked {
-      animation: heartExplode 0.6s ease-out;
-    }
+        .interactive-heart.clicked {
+            animation: heartExplode 0.6s ease-out;
+        }
     
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
     
-    @keyframes heartExplode {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.5); color: #F472B6; }
-      100% { transform: scale(1); }
-    }
+        @keyframes heartExplode {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); color: #F472B6; }
+            100% { transform: scale(1); }
+        }
 
-.floating-hearts {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .heart {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 1.5rem;
-      animation: float 6s ease-in-out infinite;
-    }
-    .heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-    .heart:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
-    .heart:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
-    .heart:nth-child(4) { top: 80%; left: 70%; animation-delay: 1s; }
-    .heart:nth-child(5) { top: 30%; left: 90%; animation-delay: 3s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(180deg); }
-    }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+        .card-container {
+            width: 98%;
+            margin: 1rem auto;
+            border-radius: 15px;
+            min-height: 90vh;
+        }
+      
+        .cover-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+      
+        .cover-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+      
+        .treasure-chest {
+            font-size: 6rem;
+            margin: 1.5rem 0;
+        }
+      
+        .unlock-instruction {
+            font-size: 1rem;
+            padding: 0 1rem;
+        }
+      
+        .header {
+            padding: 1.5rem 1rem;
+        }
+      
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+      
+        .header .subtitle {
+            font-size: 1rem;
+        }
+      
+        .timeline-nav {
+            padding: 1rem 0.5rem;
+            gap: 0.5rem;
+        } 
+      
+        .timeline-btn {
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            border-radius: 20px;
+        }
+      
+        .music-controls {
+            top: 15px;
+            right: 15px;
+        }
+      
+        .music-toggle {
+            font-size: 1.2rem;
+            padding: 0.4rem;
+        } 
+      
+        .floating-hearts .heart {
+            font-size: 1.2rem;
+        }
+      
+        .footer {
+            padding: 2rem 1rem;
+        }
+      
+        .footer p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+      
+        .love-quote {
+            font-size: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+        }
+      
+        .eternal-promise {
+            padding: 1.5rem 1rem;
+            margin: 1.5rem 0;
+        }
+      
+        .eternal-promise h3 {
+            font-size: 1.3rem;
+        }
+      
+        .eternal-promise p {
+            font-size: 1rem;
+        }
+      
+        .signature {
+          font-size: 1.5rem;
+          margin: 1rem 0;
+        }
+      
+        .next-chapter {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            margin-top: 1.5rem;
+        }
+      
+        .interactive-heart {
+            font-size: 1.5rem;
+            margin: 0 5px;
+        }
+      
+        .decorative-element {
+            font-size: 1.5rem;
+        }
+        }
     
-    .footer {
-      background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
-      padding: 3rem 2rem;
-      text-align: center;
-      margin-top: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
+        @media (max-width: 480px) {
+        .cover-title {
+            font-size: 2rem;
+        }
+      
+        .treasure-chest {
+            font-size: 5rem;
+        } 
+      
+        .header h1 {
+            font-size: 1.8rem;
+        }
+      
+        .timeline-nav {
+            flex-direction: column;
+            align-items: center;
+        }
+      
+        .timeline-btn {
+            width: 90%;
+            max-width: 250px;
+            margin: 0.2rem 0;
+        }
+      
+        .love-quote {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+        }
+      
+        .eternal-promise h3 {
+            font-size: 1.2rem;
+        }
+      
+        .signature {
+            font-size: 1.3rem;
+        }
+      
+        .next-chapter {
+          font-size: 0.9rem;
+          padding: 0.6rem 1rem;
+        }
+        }
     
-    .footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      animation: shimmer 3s ease-in-out infinite;
-    }
+        /* Accessibility and Performance Enhancements */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
     
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
+        .focus-visible {
+            outline: 2px solid #8B5CF6;
+            outline-offset: 2px;
+        }
     
-    .footer p {
-      font-size: 1.3rem;
-      color: #6D28D9;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-      position: relative;
-      z-index: 2;
-    }
+        /* Touch-friendly hover effects for mobile */
+        @media (hover: none) {
+        .timeline-btn:hover {
+            transform: none;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+      
+        .interactive-heart:hover {
+            transform: none;
+        }
+      
+        .treasure-chest:hover {
+            transform: none;
+        }
+      
+        .music-toggle:hover {
+            transform: none;
+        }
+        }   
     
-    .signature {
-      font-size: 2rem;
-      color: #8B5CF6;
-      font-family: 'Brush Script MT', cursive;
-      margin: 1.5rem 0;
-      position: relative;
-      z-index: 2;
-      animation: signatureGlow 2s ease-in-out infinite alternate;
-    }
+        /* Reduced motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+        }
     
-    @keyframes signatureGlow {
-      from { text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
-      to { text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6); }
-    }
-    
-    .next-chapter {
-      font-size: 1.1rem;
-      color: #7C3AED;
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 25px;
-      display: inline-block;
-      position: relative;
-      z-index: 2;
-      animation: nextChapterPulse 3s ease-in-out infinite;
-    }
-    
-    @keyframes nextChapterPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    
-    .love-quote {
-      font-size: 1.1rem;
-      color: #6D28D9;
-      margin: 2rem 0;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 15px;
-      border-left: 4px solid #8B5CF6;
-      position: relative;
-      z-index: 2;
-      font-style: italic;
-    }
-    
-    .love-quote::before {
-      content: '"';
-      font-size: 3rem;
-      position: absolute;
-      top: -10px;
-      left: 10px;
-      color: #A855F7;
-      opacity: 0.5;
-    }
-    
-    .love-quote::after {
-      content: '"';
-      font-size: 3rem;
-      position: absolute;
-      bottom: -20px;
-      right: 10px;
-      color: #A855F7;
-      opacity: 0.5;
-    }
-    
-    .decorative-element {
-      position: absolute;
-      font-size: 2rem;
-      opacity: 0.3;
-      animation: decorativeFloat 4s ease-in-out infinite;
-    }
-    
-    .decorative-element.top-left {
-      top: 20px;
-      left: 20px;
-    }
-    
-    .decorative-element.bottom-right {
-      bottom: 20px;
-      right: 20px;
-    }
-    
-    @keyframes decorativeFloat {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(5deg); }
-    }
-    
-    .eternal-promise {
-      background: linear-gradient(45deg, #8B5CF6, #A855F7);
-      color: white;
-      padding: 2rem;
-      border-radius: 20px;
-      margin: 2rem 0;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-    }
-    
-    .eternal-promise h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .eternal-promise p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin: 0;
-      color: rgba(255, 255, 255, 0.95);
-    }
-    
-    .interactive-heart {
-      font-size: 2rem;
-      color: #E879F9;
-      cursor: pointer;
-      display: inline-block;
-      margin: 0 10px;
-      transition: all 0.3s ease;
-      animation: heartbeat 1.5s ease-in-out infinite;
-    }
-    
-    .interactive-heart:hover {
-      transform: scale(1.3);
-      color: #F472B6;
-    }
-    
-    .interactive-heart.clicked {
-      animation: heartExplode 0.6s ease-out;
-    }
-    
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-    
-    @keyframes heartExplode {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.5); color: #F472B6; }
-      100% { transform: scale(1); }
-    }
-    
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .card-container {
-        width: 98%;
-        margin: 1rem auto;
-        border-radius: 15px;
-        min-height: 90vh;
-      }
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+        .card-container {
+            border: 2px solid #000;
+        }
       
-      .cover-title {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
+        .timeline-btn {
+            border: 1px solid #000;
+        }
       
-      .cover-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 1.5rem;
-      }
-      
-      .treasure-chest {
-        font-size: 6rem;
-        margin: 1.5rem 0;
-      }
-      
-      .unlock-instruction {
-        font-size: 1rem;
-        padding: 0 1rem;
-      }
-      
-      .header {
-        padding: 1.5rem 1rem;
-      }
-      
-      .header h1 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-      }
-      
-      .header .subtitle {
-        font-size: 1rem;
-      }
-      
-      .timeline-nav {
-        padding: 1rem 0.5rem;
-        gap: 0.5rem;
-      }
-      
-      .timeline-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-        border-radius: 20px;
-      }
-      
-      .music-controls {
-        top: 15px;
-        right: 15px;
-      }
-      
-      .music-toggle {
-        font-size: 1.2rem;
-        padding: 0.4rem;
-      }
-      
-      .floating-hearts .heart {
-        font-size: 1.2rem;
-      }
-      
-      .footer {
-        padding: 2rem 1rem;
-      }
-      
-      .footer p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-      }
-      
-      .love-quote {
-        font-size: 1rem;
-        margin: 1.5rem 0;
-        padding: 1rem;
-      }
-      
-      .eternal-promise {
-        padding: 1.5rem 1rem;
-        margin: 1.5rem 0;
-      }
-      
-      .eternal-promise h3 {
-        font-size: 1.3rem;
-      }
-      
-      .eternal-promise p {
-        font-size: 1rem;
-      }
-      
-      .signature {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-      }
-      
-      .next-chapter {
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
-        margin-top: 1.5rem;
-      }
-      
-      .interactive-heart {
-        font-size: 1.5rem;
-        margin: 0 5px;
-      }
-      
-      .decorative-element {
-        font-size: 1.5rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .cover-title {
-        font-size: 2rem;
-      }
-      
-      .treasure-chest {
-        font-size: 5rem;
-      }
-      
-      .header h1 {
-        font-size: 1.8rem;
-      }
-      
-      .timeline-nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .timeline-btn {
-        width: 90%;
-        max-width: 250px;
-        margin: 0.2rem 0;
-      }
-      
-      .love-quote {
-        font-size: 0.9rem;
-        padding: 0.8rem;
-      }
-      
-      .eternal-promise h3 {
-        font-size: 1.2rem;
-      }
-      
-      .signature {
-        font-size: 1.3rem;
-      }
-      
-      .next-chapter {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
-      }
-    }
-    
-    /* Accessibility and Performance Enhancements */
-    .smooth-scroll {
-      scroll-behavior: smooth;
-    }
-    
-    .focus-visible {
-      outline: 2px solid #8B5CF6;
-      outline-offset: 2px;
-    }
-    
-    /* Touch-friendly hover effects for mobile */
-    @media (hover: none) {
-      .timeline-btn:hover {
-        transform: none;
-        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-      }
-      
-      .interactive-heart:hover {
-        transform: none;
-      }
-      
-      .treasure-chest:hover {
-        transform: none;
-      }
-      
-      .music-toggle:hover {
-        transform: none;
-      }
-    }
-    
-    /* Reduced motion for users who prefer it */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-    
-    /* High contrast mode support */
-    @media (prefers-contrast: high) {
-      .card-container {
-        border: 2px solid #000;
-      }
-      
-      .timeline-btn {
-        border: 1px solid #000;
-      }
-      
-      .footer {
-        border-top: 2px solid #000;
-      }
+        .footer {
+            border-top: 2px solid #000;
+        }
     </style>
 </head>
 <body>
