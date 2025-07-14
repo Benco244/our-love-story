@@ -390,383 +390,7 @@
         .bernard-msg .message-content {
             color: #312E81;
         }
-    </style>
-</head>
-<body>
-    <div class="card-container">
-        <!-- Cover Page -->
-        <div class="cover-page" id="coverPage">
-            <h1 class="cover-title">Our Love Story</h1>
-            <p class="cover-subtitle">A Treasury of Beautiful Moments</p>
-            <div class="treasure-chest" onclick="unlockTreasure()">📦</div>
-            <p class="unlock-instruction">Click the treasure chest to unlock our memories...</p>
-        </div>
-        
-        <!-- Main Content -->
-        <div class="main-content" id="mainContent">
-            <!-- Header -->
-            <div class="header">
-                <h1>💜 Our Journey of Love 💜</h1>
-                <p class="subtitle">Every message, every moment, every heartbeat...</p>
-            </div>
-            
-            <!-- Music Controls -->
-            <div class="music-controls">
-                <button class="music-toggle" onclick="toggleMusic()" id="musicBtn">🎵</button>
-                <audio id="backgroundMusic" loop>
-                    <source src="Loreen_-_Tattoo.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-            
-            <!-- Timeline Navigation -->
-            <div class="timeline-nav">
-                <button class="timeline-btn active" onclick="showSection('dreamsHope')">💫 Dreams & Hope</button>
-                <button class="timeline-btn" onclick="showSection('holidays')">🎄 Holiday Magic</button>
-                <button class="timeline-btn" onclick="showSection('dailyLove')">💕 Daily Love</button>
-                <button class="timeline-btn" onclick="showSection('milestones')">🎓 Milestones</button>
-                <button class="timeline-btn" onclick="showSection('surprise')">🎁 Special Surprise</button>
-            </div>
-
-<div class="content">
-      <!-- Dreams & Hope Section -->
-      <div class="journey-section active" id="dreamsHope">
-        <div class="section-header">
-          <h2>💫 Dreams & Hope</h2>
-          <p>When we dared to dream together and spoke of forever...</p>
-        </div>
-        
-        <div class="message-card" onclick="heartClick(this)">
-          <div class="message-header">
-            <span class="sender">You</span>
-            <span class="context">Dreams of Our Future</span>
-          </div>
-          <div class="message-content">
-            "I really hope all our dreams come true Nkem. When it finally does, we'll feel such peace every moment of our lives. Nothing will ever come between us. I love u, my own"
-          </div>
-          <div class="message-heart">💜</div>
-        </div>
-
-        <div class="message-card" onclick="heartClick(this)">
-          <div class="message-header">
-            <span class="sender">You</span>
-            <span class="context">Being My Pillar</span>
-          </div>
-          <div class="message-content">
-            "My all, I'm so glad your mood swing is gone now. Pls stay strong for us, and all those we're going to make proud. My pillar and rock, we'll be fine. You're one of my biggest inspirations. I envy your drive a lot."
-          </div>
-          <div class="message-heart">💕</div>
-        </div>
-
-        <div class="message-card bernard-msg" onclick="heartClick(this)">
-          <div class="message-header">
-            <span class="sender">Bernard</span>
-            <span class="context">Response to Your Pain</span>
-          </div>
-          <div class="message-content">
-            "Obim, I wish I could jump into the next bus and appear beside you. I would gladly keep vigil with you, soothing your hand and listening to your pacifying voice tell wondrous tales. So sorry my treasure."
-          </div>
-          <div class="message-heart">💖</div>
-        </div>
-
-        <div class="message-card" onclick="heartClick(this)">
-          <div class="message-header">
-            <span class="sender">You</span>
-            <span class="context">Tales and Time Together</span>
-          </div>
-          <div class="message-content">
-            "I'll gladly tell u all the beautiful tales there are to tell my all. As long as our hearts want, mine in you and yours in me. Yes nkem, I want to hear your lovely voice."
-          </div>
-          <div class="message-heart">💝</div>
-        </div>
-      </div>
-
-      <!-- Holiday Magic Section -->
-      <div class="journey-section" id="holidays">
-        <div class="section-header">
-          <h2>🎄 Holiday Magic</h2>
-          <p>When seasons of celebration brought us closer together...</p>
-        </div>
-        
-        <div class="holiday-group">
-          <div class="holiday-title">
-            <span class="holiday-icon">🐣</span>
-            <h3>Easter - Season of Love & Sacrifice</h3>
-          </div>
-          
-          <div class="message-card" onclick="heartClick(this)">
-            <div class="message-header">
-              <span class="sender">You</span>
-              <span class="context">Easter 2024</span>
-            </div>
-            <div class="message-content">
-              "Happy Easter, my everything. The season reminds me of the power of love, the beauty of sacrifice and the value of true relationship; just like what I've found in you ❤️❤️. You are my love and peace, my safe place, my forever."
-            </div>
-            <div class="message-heart">🐰</div>
-          </div>
-
-          <div class="message-card bernard-msg" onclick="heartClick(this)">
-            <div class="message-header">
-              <span class="sender">Bernard</span>
-              <span class="context">Easter Response</span>
-            </div>
-            <div class="message-content">
-              "Happy Easter, my treasure. The Saviour has shown us what love truly is; self-giving. You have also loved me so self-givingly. What have you not given; your time, advice, service, support, thoughtful resources, or prayers? Our bond is one animated by something deeper and more real than that which holds the average relationship."
-            </div>
-            <div class="message-heart">✨</div>
-          </div>
-        </div>
-
-        <div class="holiday-group">
-          <div class="holiday-title">
-            <span class="holiday-icon">🎄</span>
-            <h3>Christmas - Season of Joy & Togetherness</h3>
-          </div>
-          
-          <div class="message-card bernard-msg" onclick="heartClick(this)">
-            <div class="message-header">
-              <span class="sender">Bernard</span>
-              <span class="context">Christmas Wishes</span>
-            </div>
-            <div class="message-content">
-              "Merry Christmas my treasure. May the love, peace, and joy of Christmas be your lot today and forever."
-            </div>
-            <div class="message-heart">🎁</div>
-          </div>
-
-          <div class="message-card" onclick="heartClick(this)">
-            <div class="message-header">
-              <span class="sender">You</span>
-              <span class="context">Christmas Love</span>
-            </div>
-            <div class="message-content">
-              "My heart's rhythm, my own, my peace, thank you so much. I wish for the best for us, this season and always. I love you dearly."
-            </div>
-            <div class="message-heart">❄️</div>
-          </div>
-
-          <div class="message-card bernard-msg" onclick="heartClick(this)">
-            <div class="message-header">
-              <span class="sender">Bernard</span>
-              <span class="context">Morning After Christmas</span>
-            </div>
-            <div class="message-content">
-              "Good morning my all. The words of your text compose such a delightful music as the keys of a piano under the magical fingers of a seasoned artist. Receiving these soul-refreshing words of yours is enough booster for the day."
-            </div>
-            <div class="message-heart">🎹</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Daily Love Section -->
-      <div class="journey-section" id="dailyLove">
-        <div class="section-header">
-          <h2>💕 Daily Love</h2>
-          <p>The sweet everyday moments that made our hearts beat as one...</p>
-        </div>
-        
-        <div class="daily-moment" onclick="heartClick(this)">
-          <div class="moment-date">Daily Connection</div>
-          <div class="message-pair">
-            <div class="message-card bernard-msg">
-              <div class="message-header">
-                <span class="sender">Bernard</span>
-                <span class="context">Missing You</span>
-              </div>
-              <div class="message-content">
-                "Obim, the rhythm of my heart. How are you doing today? I've missed you so much. We are now so close yet so far. I love you scara"
-              </div>
-              <div class="message-heart">💓</div>
-            </div>
-            
-            <div class="message-card response-card">
-              <div class="message-header">
-                <span class="sender">You</span>
-                <span class="context">Your Support</span>
-              </div>
-              <div class="message-content">
-                "My own, the music that warms my heart. Today's your presentation right? I know you'll glow up the hall with your strong and confident speech. You'll do so well. I love you more Nkem"
-              </div>
-              <div class="message-heart">🌟</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="daily-moment" onclick="heartClick(this)">
-          <div class="moment-date">Heart Connection</div>
-          <div class="message-pair">
-            <div class="message-card bernard-msg">
-              <div class="message-header">
-                <span class="sender">Bernard</span>
-                <span class="context">Evening Check-in</span>
-              </div>
-              <div class="message-content">
-                "Hello Obim, how are you today? Trust you had a nice day. Take care of yourself for us. Love you plenty"
-              </div>
-              <div class="message-heart">🌙</div>
-            </div>
-            
-            <div class="message-card response-card">
-              <div class="message-header">
-                <span class="sender">You</span>
-                <span class="context">Perfect Timing</span>
-              </div>
-              <div class="message-content">
-                "Was about to text you. Wow, we really connect with our hearts. Hope your day went well my all. Take care of yourself for me too. May your night be beautiful. I love you scatter Nkem"
-              </div>
-              <div class="message-heart">💫</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="daily-moment special-moment" onclick="heartClick(this)">
-          <div class="moment-date">November 6th, 2024 - Sunday Mass</div>
-          <div class="message-pair">
-            <div class="message-card bernard-msg">
-              <div class="message-header">
-                <span class="sender">Bernard</span>
-                <span class="context">After Church</span>
-              </div>
-              <div class="message-content">
-                "Today began beautifully; the Holy Mass, the melodious hymns, and a heart-warming view of you. Good morning Obim. You are beautiful. Have a wonderful day"
-              </div>
-              <div class="message-heart">⛪</div>
-            </div>
-            
-            <div class="message-card response-card">
-              <div class="message-header">
-                <span class="sender">You</span>
-                <span class="context">Future Dreams</span>
-              </div>
-              <div class="message-content">
-                "Awww. What a sweet message from my sweetest guy. My heart beat faster when I caught a glimpse of you. You looked like a cute baby. I so can't wait to carry a mini carbon copy of you. Thanks a million my soulmate."
-              </div>
-              <div class="message-heart">👶</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-      <!-- Milestones Section -->
-      <div class="journey-section" id="milestones">
-        <div class="section-header">
-          <h2>🎓 Milestones</h2>
-          <p>When life's biggest moments became even more special because of us...</p>
-        </div>
-        
-        <div class="milestone-achievement">
-          <div class="achievement-badge">
-            <div class="badge-icon">🎓</div>
-            <div class="achievement-title">Bernard's Induction</div>
-            <div class="achievement-subtitle">A Day of Celebration & Gratitude</div>
-          </div>
-          
-          <div class="milestone-story">
-            <div class="story-intro">
-              <p>On this special day, you went above and beyond to celebrate Bernard's achievement. Here's his heartfelt response to your incredible gesture of love...</p>
-            </div>
-            
-            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
-              <div class="message-header">
-                <span class="sender">Bernard</span>
-                <span class="context">Induction Day - Overwhelmed with Gratitude</span>
-              </div>
-              <div class="message-content">
-                <div class="message-preview">
-                  "Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me..."
-                </div>
-                <div class="message-full" style="display: none;">
-                  "Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me. 
-                  
-                  This once, I am lacking words to express the height of my gratitude and the depth of my love for you. You know I wouldn't have allowed you do this, but you have gone out of your way to do it. 
-
-                  Thank you so very much my treasure. I can only wish that our happily-ever-after come soonest. Meanwhile, I have all the ginger to make my life work for us. May God keep us to enjoy the fruits of our investments in this relationship. 
-
-                  I LOVE YOU BEYOND WORDS. I will never be tired of loving you, My treasure."
-                </div>
-              </div>
-              <div class="expand-btn">Click to read full message</div>
-              <div class="message-heart">🏆</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="milestone-achievement">
-          <div class="achievement-badge">
-            <div class="badge-icon">🌙</div>
-            <div class="achievement-title">Evening Under the Stars</div>
-            <div class="achievement-subtitle">A Perfect Moment of Peace</div>
-          </div>
-          
-          <div class="milestone-story">
-            <div class="story-intro">
-              <p>Sometimes the most beautiful milestones aren't grand events, but quiet moments that define love...</p>
-            </div>
-            
-            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
-              <div class="message-header">
-                <span class="sender">Bernard</span>
-                <span class="context">After a Beautiful Evening Together</span>
-              </div>
-              <div class="message-content">
-                <div class="message-preview">
-                  "What a beautiful evening we shared. Sitting out in the calm refreshing breeze of the night, with the fire flies flashing their subtle and yet lovely lemon lights, mosquitos massaging our feet, and our hands locked in a sweet bond of oneness..."
-                </div>
-                <div class="message-full" style="display: none;">
-                  "What a beautiful evening we shared. Sitting out in the calm refreshing breeze of the night, with the fire flies flashing their subtle and yet lovely lemon lights, mosquitos massaging our feet, and our hands locked in a sweet bond of oneness. How else do one define peace? I love you my treasure. Happy study dearest."
-                </div>
-              </div>
-              <div class="expand-btn">Click to read full message</div>
-              <div class="message-heart">🌌</div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="milestone-achievement">
-          <div class="achievement-badge">
-            <div class="badge-icon">💌</div>
-            <div class="achievement-title">The Power of Words</div>
-            <div class="achievement-subtitle">When Your Message Healed His Soul</div>
-          </div>
-          
-          <div class="milestone-story">
-            <div class="story-intro">
-              <p>Your simple check-in message had the power to transform Bernard's entire day...</p>
-            </div>
-            
-            <div class="message-card response-card milestone-msg" onclick="expandMilestone(this)">
-              <div class="message-header">
-                <span class="sender">You</span>
-                <span class="context">Sweet Daily Check-in</span>
-              </div>
-              <div class="message-content">
-                "My sunshine, how is your day going? Just checking up on my darling sweetheart that I love so much. I will come over, to have a glimpse of my heart's handsome face. Don't worry, my breath won't cease. It hasn't done so today. Please if you happen to reach Choba, get tigernut and dates for me Nkem. I love u so much"
-              </div>
-              <div class="message-heart">☀️</div>
-            </div>
-            
-            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
-              <div class="message-header">
-                <span class="sender">Bernard</span>
-                <span class="context">The Healing Power of Your Love</span>
-              </div>
-              <div class="message-content">
-                <div class="message-preview">
-                  "My love, your text went straight into my heart of hearts. It traveled faster than the speed of light, with an energy nuclear weapons can only dream about. But I am rather surprised that something that quick and charged, could exert such a calming effect..."
-                </div>
-                <div class="message-full" style="display: none;">
-                  "My love, your text went straight into my heart of hearts. It traveled faster than the speed of light, with an energy nuclear weapons can only dream about. But I am rather surprised that something that quick and charged, could exert such a calming effect on my whole body to the point that all the day's stress were relieved in a second. For real, even my shower haven't brought me such relief. I'm more than glad to hear from you, and more so, to know you are having peaceful day. Thanks to your Superman for saving the day."
-                </div>
-              </div>
-              <div class="expand-btn">Click to read full message</div>
-              <div class="message-heart">⚡</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-.floating-hearts {
+        .floating-hearts {
       position: absolute;
       top: 0;
       left: 0;
@@ -1381,6 +1005,381 @@
       .footer {
         border-top: 2px solid #000;
       }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Cover Page -->
+        <div class="cover-page" id="coverPage">
+            <h1 class="cover-title">Our Love Story</h1>
+            <p class="cover-subtitle">A Treasury of Beautiful Moments</p>
+            <div class="treasure-chest" onclick="unlockTreasure()">📦</div>
+            <p class="unlock-instruction">Click the treasure chest to unlock our memories...</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Header -->
+            <div class="header">
+                <h1>💜 Our Journey of Love 💜</h1>
+                <p class="subtitle">Every message, every moment, every heartbeat...</p>
+            </div>
+            
+            <!-- Music Controls -->
+            <div class="music-controls">
+                <button class="music-toggle" onclick="toggleMusic()" id="musicBtn">🎵</button>
+                <audio id="backgroundMusic" loop>
+                    <source src="Loreen_-_Tattoo.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            
+            <!-- Timeline Navigation -->
+            <div class="timeline-nav">
+                <button class="timeline-btn active" onclick="showSection('dreamsHope')">💫 Dreams & Hope</button>
+                <button class="timeline-btn" onclick="showSection('holidays')">🎄 Holiday Magic</button>
+                <button class="timeline-btn" onclick="showSection('dailyLove')">💕 Daily Love</button>
+                <button class="timeline-btn" onclick="showSection('milestones')">🎓 Milestones</button>
+                <button class="timeline-btn" onclick="showSection('surprise')">🎁 Special Surprise</button>
+            </div>
+
+<div class="content">
+      <!-- Dreams & Hope Section -->
+      <div class="journey-section active" id="dreamsHope">
+        <div class="section-header">
+          <h2>💫 Dreams & Hope</h2>
+          <p>When we dared to dream together and spoke of forever...</p>
+        </div>
+        
+        <div class="message-card" onclick="heartClick(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Dreams of Our Future</span>
+          </div>
+          <div class="message-content">
+            "I really hope all our dreams come true Nkem. When it finally does, we'll feel such peace every moment of our lives. Nothing will ever come between us. I love u, my own"
+          </div>
+          <div class="message-heart">💜</div>
+        </div>
+
+        <div class="message-card" onclick="heartClick(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Being My Pillar</span>
+          </div>
+          <div class="message-content">
+            "My all, I'm so glad your mood swing is gone now. Pls stay strong for us, and all those we're going to make proud. My pillar and rock, we'll be fine. You're one of my biggest inspirations. I envy your drive a lot."
+          </div>
+          <div class="message-heart">💕</div>
+        </div>
+
+        <div class="message-card bernard-msg" onclick="heartClick(this)">
+          <div class="message-header">
+            <span class="sender">Bernard</span>
+            <span class="context">Response to Your Pain</span>
+          </div>
+          <div class="message-content">
+            "Obim, I wish I could jump into the next bus and appear beside you. I would gladly keep vigil with you, soothing your hand and listening to your pacifying voice tell wondrous tales. So sorry my treasure."
+          </div>
+          <div class="message-heart">💖</div>
+        </div>
+
+        <div class="message-card" onclick="heartClick(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Tales and Time Together</span>
+          </div>
+          <div class="message-content">
+            "I'll gladly tell u all the beautiful tales there are to tell my all. As long as our hearts want, mine in you and yours in me. Yes nkem, I want to hear your lovely voice."
+          </div>
+          <div class="message-heart">💝</div>
+        </div>
+      </div>
+
+      <!-- Holiday Magic Section -->
+      <div class="journey-section" id="holidays">
+        <div class="section-header">
+          <h2>🎄 Holiday Magic</h2>
+          <p>When seasons of celebration brought us closer together...</p>
+        </div>
+        
+        <div class="holiday-group">
+          <div class="holiday-title">
+            <span class="holiday-icon">🐣</span>
+            <h3>Easter - Season of Love & Sacrifice</h3>
+          </div>
+          
+          <div class="message-card" onclick="heartClick(this)">
+            <div class="message-header">
+              <span class="sender">You</span>
+              <span class="context">Easter 2024</span>
+            </div>
+            <div class="message-content">
+              "Happy Easter, my everything. The season reminds me of the power of love, the beauty of sacrifice and the value of true relationship; just like what I've found in you ❤️❤️. You are my love and peace, my safe place, my forever."
+            </div>
+            <div class="message-heart">🐰</div>
+          </div>
+
+          <div class="message-card bernard-msg" onclick="heartClick(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Easter Response</span>
+            </div>
+            <div class="message-content">
+              "Happy Easter, my treasure. The Saviour has shown us what love truly is; self-giving. You have also loved me so self-givingly. What have you not given; your time, advice, service, support, thoughtful resources, or prayers? Our bond is one animated by something deeper and more real than that which holds the average relationship."
+            </div>
+            <div class="message-heart">✨</div>
+          </div>
+        </div>
+
+        <div class="holiday-group">
+          <div class="holiday-title">
+            <span class="holiday-icon">🎄</span>
+            <h3>Christmas - Season of Joy & Togetherness</h3>
+          </div>
+          
+          <div class="message-card bernard-msg" onclick="heartClick(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Christmas Wishes</span>
+            </div>
+            <div class="message-content">
+              "Merry Christmas my treasure. May the love, peace, and joy of Christmas be your lot today and forever."
+            </div>
+            <div class="message-heart">🎁</div>
+          </div>
+
+          <div class="message-card" onclick="heartClick(this)">
+            <div class="message-header">
+              <span class="sender">You</span>
+              <span class="context">Christmas Love</span>
+            </div>
+            <div class="message-content">
+              "My heart's rhythm, my own, my peace, thank you so much. I wish for the best for us, this season and always. I love you dearly."
+            </div>
+            <div class="message-heart">❄️</div>
+          </div>
+
+          <div class="message-card bernard-msg" onclick="heartClick(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Morning After Christmas</span>
+            </div>
+            <div class="message-content">
+              "Good morning my all. The words of your text compose such a delightful music as the keys of a piano under the magical fingers of a seasoned artist. Receiving these soul-refreshing words of yours is enough booster for the day."
+            </div>
+            <div class="message-heart">🎹</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Love Section -->
+      <div class="journey-section" id="dailyLove">
+        <div class="section-header">
+          <h2>💕 Daily Love</h2>
+          <p>The sweet everyday moments that made our hearts beat as one...</p>
+        </div>
+        
+        <div class="daily-moment" onclick="heartClick(this)">
+          <div class="moment-date">Daily Connection</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Missing You</span>
+              </div>
+              <div class="message-content">
+                "Obim, the rhythm of my heart. How are you doing today? I've missed you so much. We are now so close yet so far. I love you scara"
+              </div>
+              <div class="message-heart">💓</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Your Support</span>
+              </div>
+              <div class="message-content">
+                "My own, the music that warms my heart. Today's your presentation right? I know you'll glow up the hall with your strong and confident speech. You'll do so well. I love you more Nkem"
+              </div>
+              <div class="message-heart">🌟</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-moment" onclick="heartClick(this)">
+          <div class="moment-date">Heart Connection</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Evening Check-in</span>
+              </div>
+              <div class="message-content">
+                "Hello Obim, how are you today? Trust you had a nice day. Take care of yourself for us. Love you plenty"
+              </div>
+              <div class="message-heart">🌙</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Perfect Timing</span>
+              </div>
+              <div class="message-content">
+                "Was about to text you. Wow, we really connect with our hearts. Hope your day went well my all. Take care of yourself for me too. May your night be beautiful. I love you scatter Nkem"
+              </div>
+              <div class="message-heart">💫</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-moment special-moment" onclick="heartClick(this)">
+          <div class="moment-date">November 6th, 2024 - Sunday Mass</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">After Church</span>
+              </div>
+              <div class="message-content">
+                "Today began beautifully; the Holy Mass, the melodious hymns, and a heart-warming view of you. Good morning Obim. You are beautiful. Have a wonderful day"
+              </div>
+              <div class="message-heart">⛪</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Future Dreams</span>
+              </div>
+              <div class="message-content">
+                "Awww. What a sweet message from my sweetest guy. My heart beat faster when I caught a glimpse of you. You looked like a cute baby. I so can't wait to carry a mini carbon copy of you. Thanks a million my soulmate."
+              </div>
+              <div class="message-heart">👶</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Milestones Section -->
+      <div class="journey-section" id="milestones">
+        <div class="section-header">
+          <h2>🎓 Milestones</h2>
+          <p>When life's biggest moments became even more special because of us...</p>
+        </div>
+        
+        <div class="milestone-achievement">
+          <div class="achievement-badge">
+            <div class="badge-icon">🎓</div>
+            <div class="achievement-title">Bernard's Induction</div>
+            <div class="achievement-subtitle">A Day of Celebration & Gratitude</div>
+          </div>
+          
+          <div class="milestone-story">
+            <div class="story-intro">
+              <p>On this special day, you went above and beyond to celebrate Bernard's achievement. Here's his heartfelt response to your incredible gesture of love...</p>
+            </div>
+            
+            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Induction Day - Overwhelmed with Gratitude</span>
+              </div>
+              <div class="message-content">
+                <div class="message-preview">
+                  "Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me..."
+                </div>
+                <div class="message-full" style="display: none;">
+                  "Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me. 
+                  
+                  This once, I am lacking words to express the height of my gratitude and the depth of my love for you. You know I wouldn't have allowed you do this, but you have gone out of your way to do it. 
+
+                  Thank you so very much my treasure. I can only wish that our happily-ever-after come soonest. Meanwhile, I have all the ginger to make my life work for us. May God keep us to enjoy the fruits of our investments in this relationship. 
+
+                  I LOVE YOU BEYOND WORDS. I will never be tired of loving you, My treasure."
+                </div>
+              </div>
+              <div class="expand-btn">Click to read full message</div>
+              <div class="message-heart">🏆</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="milestone-achievement">
+          <div class="achievement-badge">
+            <div class="badge-icon">🌙</div>
+            <div class="achievement-title">Evening Under the Stars</div>
+            <div class="achievement-subtitle">A Perfect Moment of Peace</div>
+          </div>
+          
+          <div class="milestone-story">
+            <div class="story-intro">
+              <p>Sometimes the most beautiful milestones aren't grand events, but quiet moments that define love...</p>
+            </div>
+            
+            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">After a Beautiful Evening Together</span>
+              </div>
+              <div class="message-content">
+                <div class="message-preview">
+                  "What a beautiful evening we shared. Sitting out in the calm refreshing breeze of the night, with the fire flies flashing their subtle and yet lovely lemon lights, mosquitos massaging our feet, and our hands locked in a sweet bond of oneness..."
+                </div>
+                <div class="message-full" style="display: none;">
+                  "What a beautiful evening we shared. Sitting out in the calm refreshing breeze of the night, with the fire flies flashing their subtle and yet lovely lemon lights, mosquitos massaging our feet, and our hands locked in a sweet bond of oneness. How else do one define peace? I love you my treasure. Happy study dearest."
+                </div>
+              </div>
+              <div class="expand-btn">Click to read full message</div>
+              <div class="message-heart">🌌</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="milestone-achievement">
+          <div class="achievement-badge">
+            <div class="badge-icon">💌</div>
+            <div class="achievement-title">The Power of Words</div>
+            <div class="achievement-subtitle">When Your Message Healed His Soul</div>
+          </div>
+          
+          <div class="milestone-story">
+            <div class="story-intro">
+              <p>Your simple check-in message had the power to transform Bernard's entire day...</p>
+            </div>
+            
+            <div class="message-card response-card milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Sweet Daily Check-in</span>
+              </div>
+              <div class="message-content">
+                "My sunshine, how is your day going? Just checking up on my darling sweetheart that I love so much. I will come over, to have a glimpse of my heart's handsome face. Don't worry, my breath won't cease. It hasn't done so today. Please if you happen to reach Choba, get tigernut and dates for me Nkem. I love u so much"
+              </div>
+              <div class="message-heart">☀️</div>
+            </div>
+            
+            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">The Healing Power of Your Love</span>
+              </div>
+              <div class="message-content">
+                <div class="message-preview">
+                  "My love, your text went straight into my heart of hearts. It traveled faster than the speed of light, with an energy nuclear weapons can only dream about. But I am rather surprised that something that quick and charged, could exert such a calming effect..."
+                </div>
+                <div class="message-full" style="display: none;">
+                  "My love, your text went straight into my heart of hearts. It traveled faster than the speed of light, with an energy nuclear weapons can only dream about. But I am rather surprised that something that quick and charged, could exert such a calming effect on my whole body to the point that all the day's stress were relieved in a second. For real, even my shower haven't brought me such relief. I'm more than glad to hear from you, and more so, to know you are having peaceful day. Thanks to your Superman for saving the day."
+                </div>
+              </div>
+              <div class="expand-btn">Click to read full message</div>
+              <div class="message-heart">⚡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <!-- Journey Sections -->
             <div class="journey-section active" id="dreamsHope">
@@ -1573,4 +1572,3 @@
     </script>
 </body>
 </html>
-
