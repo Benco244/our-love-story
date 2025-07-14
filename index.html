@@ -1,464 +1,1857 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Love Story - A Journey Through Time</title>
-  <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-}
-.card-container {
-  max-width: 900px;
-  width: 95%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
-  min-height: 600px;
-}
-.cover-page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #8B5CF6, #A855F7, #C084FC);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  z-index: 1000;
-  transition: all 0.8s ease;
-}
-.cover-page.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.8);
-}
-.cover-content {
-  text-align: center;
-  max-width: 80%;
-}
-.cover-title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  animation: glow 2s ease-in-out infinite alternate;
-}
-@keyframes glow {
-  from { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(255,255,255,0.5); }
-  to { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.8); }
-}
-.cover-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-.treasure-chest {
-  font-size: 8rem;
-  margin: 2rem 0;
-  animation: bounce 2s ease-in-out infinite;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.treasure-chest:hover {
-  transform: scale(1.1);
-}
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
-}
-.unlock-instruction {
-  font-size: 1.2rem;
-  opacity: 0.8;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 1; }
-}
-.floating-hearts {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-.heart {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.5rem;
-  animation: float 6s ease-in-out infinite;
-}
-.heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-.heart:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
-.heart:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
-.heart:nth-child(4) { top: 80%; left: 70%; animation-delay: 1s; }
-.heart:nth-child(5) { top: 30%; left: 90%; animation-delay: 3s; }
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
-.music-controls {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-}
-.music-toggle {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-.music-toggle:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-}
-.timeline-nav {
-  background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  border-bottom: 2px solid #DDD6FE;
-}
-.timeline-btn {
-  background: linear-gradient(45deg, #8B5CF6, #A855F7);
-  color: white;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-}
-.timeline-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
-}
-.timeline-btn.active {
-  background: linear-gradient(45deg, #7C3AED, #8B5CF6);
-  transform: translateY(-2px);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story - A Treasury of Moments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .card-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: blur(10px);
+            min-height: 95vh;
+        }
+        
+        .cover-page {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #8B5CF6, #A855F7, #C084FC);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearts" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><text x="10" y="15" font-size="12" fill="rgba(255,255,255,0.1)" text-anchor="middle">♥</text></pattern></defs><rect width="100" height="100" fill="url(%23hearts)"/></svg>');
+            animation: backgroundMove 20s linear infinite;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(100px); }
+        }
+        
+        .cover-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+            to { text-shadow: 0 0 20px rgba(255,255,255,0.8), 2px 2px 4px rgba(0,0,0,0.3); }
+        }
+        
+        .cover-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+        }
+        
+        .treasure-chest {
+            font-size: 8rem;
+            margin: 2rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            animation: treasureFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes treasureFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        
+        .treasure-chest:hover {
+            transform: scale(1.1) rotate(5deg);
+            text-shadow: 0 0 30px rgba(255,255,255,0.8);
+        }
+        
+        .unlock-instruction {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+            animation: instructionPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes instructionPulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        .main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .main-content.revealed {
+            display: block;
+            opacity: 1;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+            animation: headerShine 4s ease-in-out infinite;
+        }
+        
+        @keyframes headerShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .header h1 {
+            color: #6D28D9;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .header .subtitle {
+            color: #8B5CF6;
+            font-size: 1.2rem;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-nav {
+            background: linear-gradient(135deg, #DDD6FE, #C4B5FD);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #A855F7;
+        }
+        
+        .timeline-btn {
+            background: linear-gradient(135deg, #8B5CF6, #A855F7);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        
+        .timeline-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .timeline-btn:hover::before {
+            left: 100%;
+        }
+        
+        .timeline-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+        
+        .timeline-btn.active {
+            background: linear-gradient(135deg, #6D28D9, #7C3AED);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(109, 40, 217, 0.5);
+        }
+        
+        .music-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .music-toggle {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .music-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .music-toggle.playing {
+            color: #8B5CF6;
+            animation: musicPulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .journey-section {
+            display: none;
+            padding: 2rem;
+            position: relative;
+            background: linear-gradient(135deg, #FDFBFF, #F8F4FF);
+            min-height: 500px;
+        }
+        
+        .journey-section.active {
+            display: block;
+            animation: sectionFadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes sectionFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .section-header h2 {
+            color: #6D28D9;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #8B5CF6, #A855F7);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            color: #8B5CF6;
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .message-card {
+            background: linear-gradient(135deg, #FFFFFF, #F8F4FF);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(139, 92, 246, 0.05) 50%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .message-card:hover::before {
+            opacity: 1;
+        }
+        
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
+        }
+        
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        
+        .sender {
+            font-weight: 600;
+            color: #6D28D9;
+            font-size: 1.1rem;
+        }
+        
+        .context {
+            color: #8B5CF6;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .message-content {
+            color: #4C1D95;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .message-heart {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .message-card:hover .message-heart {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+        
+        .bernard-msg {
+            background: linear-gradient(135deg, #E0E7FF, #C7D2FE);
+            border-left: 4px solid #6366F1;
+        }
+        
+        .bernard-msg .sender {
+            color: #3730A3;
+        }
+        
+        .bernard-msg .message-content {
+            color: #312E81;
+        }
+    </style>
 </head>
 <body>
-<div class="card-container">
-  <div class="decorative-element top-left">💜</div>
-  <div class="decorative-element bottom-right">💕</div>
+    <div class="card-container">
+        <!-- Cover Page -->
+        <div class="cover-page" id="coverPage">
+            <h1 class="cover-title">Our Love Story</h1>
+            <p class="cover-subtitle">A Treasury of Beautiful Moments</p>
+            <div class="treasure-chest" onclick="unlockTreasure()">📦</div>
+            <p class="unlock-instruction">Click the treasure chest to unlock our memories...</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Header -->
+            <div class="header">
+                <h1>💜 Our Journey of Love 💜</h1>
+                <p class="subtitle">Every message, every moment, every heartbeat...</p>
+            </div>
+            
+            <!-- Music Controls -->
+            <div class="music-controls">
+                <button class="music-toggle" onclick="toggleMusic()" id="musicBtn">🎵</button>
+                <audio id="backgroundMusic" loop>
+                    <source src="Loreen_-_Tattoo.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            
+            <!-- Timeline Navigation -->
+            <div class="timeline-nav">
+                <button class="timeline-btn active" onclick="showSection('dreamsHope')">💫 Dreams & Hope</button>
+                <button class="timeline-btn" onclick="showSection('holidays')">🎄 Holiday Magic</button>
+                <button class="timeline-btn" onclick="showSection('dailyLove')">💕 Daily Love</button>
+                <button class="timeline-btn" onclick="showSection('milestones')">🎓 Milestones</button>
+                <button class="timeline-btn" onclick="showSection('surprise')">🎁 Special Surprise</button>
+            </div>
 
-  <!-- Cover Page -->
-  <div class="cover-page" id="coverPage">
-    <div class="cover-content">
-      <h1 class="cover-title">💜 Our Love Story 💜</h1>
-      <p class="cover-subtitle">A Treasury of Our Most Precious Moments</p>
-      <div class="treasure-chest" onclick="unlockTreasure()">📦</div>
-      <p class="unlock-instruction">Click the treasure chest to unlock our memories</p>
-    </div>
-  </div>
+<div class="content">
+      <!-- Dreams & Hope Section -->
+      <div class="journey-section active" id="dreamsHope">
+        <div class="section-header">
+          <h2>💫 Dreams & Hope</h2>
+          <p>When we dared to dream together and spoke of forever...</p>
+        </div>
+        
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Dreams of Our Future</span>
+          </div>
+          <div class="message-content">
+            "I really hope all our dreams come true Nkem. When it finally does, we'll feel such peace every moment of our lives. Nothing will ever come between us. I love u, my own"
+          </div>
+          <div class="message-heart">💜</div>
+        </div>
 
-  <!-- Main Content -->
-  <div class="main-content" id="mainContent">
-    <div class="header">
-      <div class="music-controls">
-        <button class="music-toggle" onclick="toggleMusic()" id="musicBtn">🎵</button>
-      </div>
-      <div class="floating-hearts">
-        <div class="heart">💜</div>
-        <div class="heart">💕</div>
-        <div class="heart">💖</div>
-        <div class="heart">💘</div>
-        <div class="heart">💝</div>
-      </div>
-      $1
-<img src="photo.jpg" alt="Our Picture" style="max-width: 200px; border-radius: 15px; margin: 1rem auto; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-      <p class="subtitle">Every message a treasure, every moment a memory</p>
-    </div>
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Being My Pillar</span>
+          </div>
+          <div class="message-content">
+            "My all, I'm so glad your mood swing is gone now. Pls stay strong for us, and all those we're going to make proud. My pillar and rock, we'll be fine. You're one of my biggest inspirations. I envy your drive a lot."
+          </div>
+          <div class="message-heart">💕</div>
+        </div>
 
-    <div class="timeline-nav">
-      <button class="timeline-btn active" onclick="showSection('dreamsHope')">💫 Dreams & Hope</button>
-      <button class="timeline-btn" onclick="showSection('holidays')">🎄 Holiday Magic</button>
-      <button class="timeline-btn" onclick="showSection('dailyLove')">💕 Daily Love</button>
-      <button class="timeline-btn" onclick="showSection('milestones')">🎓 Milestones</button>
-      <button class="timeline-btn" onclick="showSection('surprise')">✨ Special Surprise</button>
-    </div>
+        <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">Bernard</span>
+            <span class="context">Response to Your Pain</span>
+          </div>
+          <div class="message-content">
+            "Obim, I wish I could jump into the next bus and appear beside you. I would gladly keep vigil with you, soothing your hand and listening to your pacifying voice tell wondrous tales. So sorry my treasure."
+          </div>
+          <div class="message-heart">💖</div>
+        </div>
 
-    <div class="content">
-<!-- Journey Sections Begin -->
-<!-- CHUNK 1: Dreams & Hope Section -->
-<div class="journey-section" id="dreamsHope">
-  <div class="section-header">
-    <h2 class="section-title">💫 Dreams & Hope</h2>
-    <p class="section-subtitle">Where our hearts first whispered of forever</p>
-  </div>
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Tales and Time Together</span>
+          </div>
+          <div class="message-content">
+            "I'll gladly tell u all the beautiful tales there are to tell my all. As long as our hearts want, mine in you and yours in me. Yes nkem, I want to hear your lovely voice."
+          </div>
+          <div class="message-heart">💝</div>
+        </div>
+      </div>
 
-  <div class="conversation-container">
-    <div class="message-container uzoma-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">U</div>
-        <div>Uzoma</div>
-      </div>
-      <div class="message-text">
-        I really hope all our dreams come true Nkem. When it finally does, we'ld feel such peace every moment of our lives. Nothing will ever come btwn us. I love u, my own
-        <span class="interactive-heart" onclick="pulseHeart(this)">💜</span>
-      </div>
-    </div>
-
-    <div class="message-container uzoma-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">U</div>
-        <div>Uzoma</div>
-      </div>
-      <div class="message-text">
-        My all, im so glad Ur mood swing is gone now. Pls stay strong 4 us, and all doz we're going 2 make proud. My pillar n rock, we'll b fine. Ure one of my biggest inspirations. I envy Ur drive a lot. It's also ok 2 feel down too. I'll come see U 2moro y'hear. I love u so much Nkem. The rats are out ooo
-        <span class="interactive-heart" onclick="pulseHeart(this)">🐭</span>
-      </div>
-    </div>
-
-    <div class="message-container uzoma-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">U</div>
-        <div>Uzoma</div>
-      </div>
-      <div class="message-text">
-        Remember when I had swollen arms n wrists after playing volleyball sometime last year. Was at d chaplaincy, with Sir Goodnews n Michael. U returned quite late from work, and u were trying to soothe the pain for me. I wish u were here to do it again. Cos my hands are so fat right now. And vibrating badly. OMG
-        <span class="interactive-heart" onclick="pulseHeart(this)">🖐️</span>
-      </div>
-    </div>
-
-    <div class="message-container bernard-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">B</div>
-        <div>Bernard</div>
-      </div>
-      <div class="message-text">
-        Obim, I wish I could jump into the next bus and appear beside you. I would gladly keep vigil with you, soothing your hand and listening to your pacifying voice tell wondrous tales. So sorry my treasure. Please be strong. Can we talk tonight?
-        <span class="interactive-heart" onclick="pulseHeart(this)">🎧</span>
-      </div>
-    </div>
-
-    <div class="message-container uzoma-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">U</div>
-        <div>Uzoma</div>
-      </div>
-      <div class="message-text">
-        I'll gladly tell u all d beautiful tales there are to tell my all. As long as our hearts want, mine in you and yours in me. Yes nkem, I want to hear ur lovely voice. My roomies are around but I'll leave d room. When will u have time? I don't have much airtime tho. I'll go Choba with u on Saturday my love.
-        <span class="interactive-heart" onclick="pulseHeart(this)">📞</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CHUNK 2: Holiday Magic Section -->
-<div class="journey-section" id="holidays">
-  <div class="section-header">
-    <h2 class="section-title">🎄 Holiday Magic</h2>
-    <p class="section-subtitle">Celebrating love through sacred seasons</p>
-  </div>
-
-  <div class="conversation-container">
-    <div class="conversation-title">✨ Easter Celebration</div>
-
-    <div class="message-container uzoma-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">U</div>
-        <div>Uzoma</div>
-      </div>
-      <div class="message-text">
-        Happy Easter, my everything. The season reminds me of the power of love, the beauty of sacrifice and the value of true relationship ; just like what I've found in you❤️❤️. You are my love and peace, my safe place, my forever. May this Easter fill our hearts with divine peace and our love with even more grace🙏🏾. Goodnight nkem
-        <span class="interactive-heart" onclick="pulseHeart(this)">🕊️</span>
-      </div>
+      <!-- Placeholder sections for other chunks -->
+      <div class="journey-section" id="holidays"></div>
+      <div class="journey-section" id="dailyLove"></div>
+      <div class="journey-section" id="milestones"></div>
+      <div class="journey-section" id="surprise"></div>
     </div>
 
-    <div class="message-container bernard-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">B</div>
-        <div>Bernard</div>
+<div class="content">
+      <!-- Dreams & Hope Section -->
+      <div class="journey-section active" id="dreamsHope">
+        <div class="section-header">
+          <h2>💫 Dreams & Hope</h2>
+          <p>When we dared to dream together and spoke of forever...</p>
+        </div>
+        
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Dreams of Our Future</span>
+          </div>
+          <div class="message-content">
+            "I really hope all our dreams come true Nkem. When it finally does, we'll feel such peace every moment of our lives. Nothing will ever come between us. I love u, my own"
+          </div>
+          <div class="message-heart">💜</div>
+        </div>
+
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Being My Pillar</span>
+          </div>
+          <div class="message-content">
+            "My all, I'm so glad your mood swing is gone now. Pls stay strong for us, and all those we're going to make proud. My pillar and rock, we'll be fine. You're one of my biggest inspirations. I envy your drive a lot."
+          </div>
+          <div class="message-heart">💕</div>
+        </div>
+
+        <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">Bernard</span>
+            <span class="context">Response to Your Pain</span>
+          </div>
+          <div class="message-content">
+            "Obim, I wish I could jump into the next bus and appear beside you. I would gladly keep vigil with you, soothing your hand and listening to your pacifying voice tell wondrous tales. So sorry my treasure."
+          </div>
+          <div class="message-heart">💖</div>
+        </div>
+
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Tales and Time Together</span>
+          </div>
+          <div class="message-content">
+            "I'll gladly tell u all the beautiful tales there are to tell my all. As long as our hearts want, mine in you and yours in me. Yes nkem, I want to hear your lovely voice."
+          </div>
+          <div class="message-heart">💝</div>
+        </div>
       </div>
-      <div class="message-text">
-        Happy Easter, my treasure. The Saviour has shown us what love truly is; self-giving. You have also loved me so self-givingly. What have you not given; your time, advice, service, support, thoughtful resources, or prayers? Our bond is one animated by something deeper and more real than that which holds the average relationship. And I pray that the Light of Christ will keep burning the flame of our love, and the graces of Easter keep our commitments anew. Thank you so much, obim. You sent me the best Easter greeting❤️
-        <span class="interactive-heart" onclick="pulseHeart(this)">🌸</span>
+
+      <!-- Holiday Magic Section -->
+      <div class="journey-section" id="holidays">
+        <div class="section-header">
+          <h2>🎄 Holiday Magic</h2>
+          <p>When seasons of celebration brought us closer together...</p>
+        </div>
+        
+        <div class="holiday-group">
+          <div class="holiday-title">
+            <span class="holiday-icon">🐣</span>
+            <h3>Easter - Season of Love & Sacrifice</h3>
+          </div>
+          
+          <div class="message-card" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">You</span>
+              <span class="context">Easter 2024</span>
+            </div>
+            <div class="message-content">
+              "Happy Easter, my everything. The season reminds me of the power of love, the beauty of sacrifice and the value of true relationship; just like what I've found in you ❤️❤️. You are my love and peace, my safe place, my forever."
+            </div>
+            <div class="message-heart">🐰</div>
+          </div>
+
+          <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Easter Response</span>
+            </div>
+            <div class="message-content">
+              "Happy Easter, my treasure. The Saviour has shown us what love truly is; self-giving. You have also loved me so self-givingly. What have you not given; your time, advice, service, support, thoughtful resources, or prayers? Our bond is one animated by something deeper and more real than that which holds the average relationship."
+            </div>
+            <div class="message-heart">✨</div>
+          </div>
+        </div>
+
+        <div class="holiday-group">
+          <div class="holiday-title">
+            <span class="holiday-icon">🎄</span>
+            <h3>Christmas - Season of Joy & Togetherness</h3>
+          </div>
+          
+          <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Christmas Wishes</span>
+            </div>
+            <div class="message-content">
+              "Merry Christmas my treasure. May the love, peace, and joy of Christmas be your lot today and forever."
+            </div>
+            <div class="message-heart">🎁</div>
+          </div>
+
+          <div class="message-card" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">You</span>
+              <span class="context">Christmas Love</span>
+            </div>
+            <div class="message-content">
+              "My heart's rhythm, my own, my peace, thank you so much. I wish for the best for us, this season and always. I love you dearly."
+            </div>
+            <div class="message-heart">❄️</div>
+          </div>
+
+          <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Morning After Christmas</span>
+            </div>
+            <div class="message-content">
+              "Good morning my all. The words of your text compose such a delightful music as the keys of a piano under the magical fingers of a seasoned artist. Receiving these soul-refreshing words of yours is enough booster for the day."
+            </div>
+            <div class="message-heart">🎹</div>
+          </div>
+        </div>
       </div>
+
+      <!-- Daily Love Section -->
+      <div class="journey-section" id="dailyLove">
+        <div class="section-header">
+          <h2>💕 Daily Love</h2>
+          <p>The sweet everyday moments that made our hearts beat as one...</p>
+        </div>
+        
+        <div class="daily-moment" onclick="pulseHeart(this)">
+          <div class="moment-date">Daily Connection</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Missing You</span>
+              </div>
+              <div class="message-content">
+                "Obim, the rhythm of my heart. How are you doing today? I've missed you so much. We are now so close yet so far. I love you scara"
+              </div>
+              <div class="message-heart">💓</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Your Support</span>
+              </div>
+              <div class="message-content">
+                "My own, the music that warms my heart. Today's your presentation right? I know you'll glow up the hall with your strong and confident speech. You'll do so well. I love you more Nkem"
+              </div>
+              <div class="message-heart">🌟</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-moment" onclick="pulseHeart(this)">
+          <div class="moment-date">Heart Connection</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Evening Check-in</span>
+              </div>
+              <div class="message-content">
+                "Hello Obim, how are you today? Trust you had a nice day. Take care of yourself for us. Love you plenty"
+              </div>
+              <div class="message-heart">🌙</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Perfect Timing</span>
+              </div>
+              <div class="message-content">
+                "Was about to text you. Wow, we really connect with our hearts. Hope your day went well my all. Take care of yourself for me too. May your night be beautiful. I love you scatter Nkem"
+              </div>
+              <div class="message-heart">💫</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-moment special-moment" onclick="pulseHeart(this)">
+          <div class="moment-date">November 6th, 2024 - Sunday Mass</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">After Church</span>
+              </div>
+              <div class="message-content">
+                "Today began beautifully; the Holy Mass, the melodious hymns, and a heart-warming view of you. Good morning Obim. You are beautiful. Have a wonderful day"
+              </div>
+              <div class="message-heart">⛪</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Future Dreams</span>
+              </div>
+              <div class="message-content">
+                "Awww. What a sweet message from my sweetest guy. My heart beat faster when I caught a glimpse of you. You looked like a cute baby. I so can't wait to carry a mini carbon copy of you. Thanks a million my soulmate."
+              </div>
+              <div class="message-heart">👶</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="journey-section" id="milestones"></div>
+      <div class="journey-section" id="surprise"></div>
     </div>
-  </div>
-</div>
 
-<!-- CHUNK 3: Daily Love Section -->
-<div class="journey-section" id="dailyLove">
-  <div class="section-header">
-    <h2 class="section-title">💕 Daily Love</h2>
-    <p class="section-subtitle">The sweet, ordinary moments that made everything extraordinary</p>
-  </div>
+<div class="content">
+      <!-- Dreams & Hope Section -->
+      <div class="journey-section active" id="dreamsHope">
+        <div class="section-header">
+          <h2>💫 Dreams & Hope</h2>
+          <p>When we dared to dream together and spoke of forever...</p>
+        </div>
+        
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Dreams of Our Future</span>
+          </div>
+          <div class="message-content">
+            "I really hope all our dreams come true Nkem. When it finally does, we'll feel such peace every moment of our lives. Nothing will ever come between us. I love u, my own"
+          </div>
+          <div class="message-heart">💜</div>
+        </div>
 
-  <div class="conversation-container">
-    <div class="conversation-title">🌇 Sweet Evenings</div>
-    <div class="message-container bernard-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">B</div>
-        <div>Bernard</div>
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Being My Pillar</span>
+          </div>
+          <div class="message-content">
+            "My all, I'm so glad your mood swing is gone now. Pls stay strong for us, and all those we're going to make proud. My pillar and rock, we'll be fine. You're one of my biggest inspirations. I envy your drive a lot."
+          </div>
+          <div class="message-heart">💕</div>
+        </div>
+
+        <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">Bernard</span>
+            <span class="context">Response to Your Pain</span>
+          </div>
+          <div class="message-content">
+            "Obim, I wish I could jump into the next bus and appear beside you. I would gladly keep vigil with you, soothing your hand and listening to your pacifying voice tell wondrous tales. So sorry my treasure."
+          </div>
+          <div class="message-heart">💖</div>
+        </div>
+
+        <div class="message-card" onclick="pulseHeart(this)">
+          <div class="message-header">
+            <span class="sender">You</span>
+            <span class="context">Tales and Time Together</span>
+          </div>
+          <div class="message-content">
+            "I'll gladly tell u all the beautiful tales there are to tell my all. As long as our hearts want, mine in you and yours in me. Yes nkem, I want to hear your lovely voice."
+          </div>
+          <div class="message-heart">💝</div>
+        </div>
       </div>
-      <div class="message-text">
-        What a beautiful evening we shared. Sitting out in the calm refreshing breeze of the night, with the fireflies flashing their subtle and yet lovely lemon lights, mosquitos massaging our feet, and our hands locked in a sweet bond of oneness. How else does one define peace? I love you my treasure. Happy study dearest.
-        <span class="interactive-heart" onclick="pulseHeart(this)">🌙</span>
+
+      <!-- Holiday Magic Section -->
+      <div class="journey-section" id="holidays">
+        <div class="section-header">
+          <h2>🎄 Holiday Magic</h2>
+          <p>When seasons of celebration brought us closer together...</p>
+        </div>
+        
+        <div class="holiday-group">
+          <div class="holiday-title">
+            <span class="holiday-icon">🐣</span>
+            <h3>Easter - Season of Love & Sacrifice</h3>
+          </div>
+          
+          <div class="message-card" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">You</span>
+              <span class="context">Easter 2024</span>
+            </div>
+            <div class="message-content">
+              "Happy Easter, my everything. The season reminds me of the power of love, the beauty of sacrifice and the value of true relationship; just like what I've found in you ❤️❤️. You are my love and peace, my safe place, my forever."
+            </div>
+            <div class="message-heart">🐰</div>
+          </div>
+
+          <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Easter Response</span>
+            </div>
+            <div class="message-content">
+              "Happy Easter, my treasure. The Saviour has shown us what love truly is; self-giving. You have also loved me so self-givingly. What have you not given; your time, advice, service, support, thoughtful resources, or prayers? Our bond is one animated by something deeper and more real than that which holds the average relationship."
+            </div>
+            <div class="message-heart">✨</div>
+          </div>
+        </div>
+
+        <div class="holiday-group">
+          <div class="holiday-title">
+            <span class="holiday-icon">🎄</span>
+            <h3>Christmas - Season of Joy & Togetherness</h3>
+          </div>
+          
+          <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Christmas Wishes</span>
+            </div>
+            <div class="message-content">
+              "Merry Christmas my treasure. May the love, peace, and joy of Christmas be your lot today and forever."
+            </div>
+            <div class="message-heart">🎁</div>
+          </div>
+
+          <div class="message-card" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">You</span>
+              <span class="context">Christmas Love</span>
+            </div>
+            <div class="message-content">
+              "My heart's rhythm, my own, my peace, thank you so much. I wish for the best for us, this season and always. I love you dearly."
+            </div>
+            <div class="message-heart">❄️</div>
+          </div>
+
+          <div class="message-card bernard-msg" onclick="pulseHeart(this)">
+            <div class="message-header">
+              <span class="sender">Bernard</span>
+              <span class="context">Morning After Christmas</span>
+            </div>
+            <div class="message-content">
+              "Good morning my all. The words of your text compose such a delightful music as the keys of a piano under the magical fingers of a seasoned artist. Receiving these soul-refreshing words of yours is enough booster for the day."
+            </div>
+            <div class="message-heart">🎹</div>
+          </div>
+        </div>
       </div>
+
+      <!-- Daily Love Section -->
+      <div class="journey-section" id="dailyLove">
+        <div class="section-header">
+          <h2>💕 Daily Love</h2>
+          <p>The sweet everyday moments that made our hearts beat as one...</p>
+        </div>
+        
+        <div class="daily-moment" onclick="pulseHeart(this)">
+          <div class="moment-date">Daily Connection</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Missing You</span>
+              </div>
+              <div class="message-content">
+                "Obim, the rhythm of my heart. How are you doing today? I've missed you so much. We are now so close yet so far. I love you scara"
+              </div>
+              <div class="message-heart">💓</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Your Support</span>
+              </div>
+              <div class="message-content">
+                "My own, the music that warms my heart. Today's your presentation right? I know you'll glow up the hall with your strong and confident speech. You'll do so well. I love you more Nkem"
+              </div>
+              <div class="message-heart">🌟</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-moment" onclick="pulseHeart(this)">
+          <div class="moment-date">Heart Connection</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Evening Check-in</span>
+              </div>
+              <div class="message-content">
+                "Hello Obim, how are you today? Trust you had a nice day. Take care of yourself for us. Love you plenty"
+              </div>
+              <div class="message-heart">🌙</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Perfect Timing</span>
+              </div>
+              <div class="message-content">
+                "Was about to text you. Wow, we really connect with our hearts. Hope your day went well my all. Take care of yourself for me too. May your night be beautiful. I love you scatter Nkem"
+              </div>
+              <div class="message-heart">💫</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-moment special-moment" onclick="pulseHeart(this)">
+          <div class="moment-date">November 6th, 2024 - Sunday Mass</div>
+          <div class="message-pair">
+            <div class="message-card bernard-msg">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">After Church</span>
+              </div>
+              <div class="message-content">
+                "Today began beautifully; the Holy Mass, the melodious hymns, and a heart-warming view of you. Good morning Obim. You are beautiful. Have a wonderful day"
+              </div>
+              <div class="message-heart">⛪</div>
+            </div>
+            
+            <div class="message-card response-card">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Future Dreams</span>
+              </div>
+              <div class="message-content">
+                "Awww. What a sweet message from my sweetest guy. My heart beat faster when I caught a glimpse of you. You looked like a cute baby. I so can't wait to carry a mini carbon copy of you. Thanks a million my soulmate."
+              </div>
+              <div class="message-heart">👶</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Milestones Section -->
+      <div class="journey-section" id="milestones">
+        <div class="section-header">
+          <h2>🎓 Milestones</h2>
+          <p>When life's biggest moments became even more special because of us...</p>
+        </div>
+        
+        <div class="milestone-achievement">
+          <div class="achievement-badge">
+            <div class="badge-icon">🎓</div>
+            <div class="achievement-title">Bernard's Induction</div>
+            <div class="achievement-subtitle">A Day of Celebration & Gratitude</div>
+          </div>
+          
+          <div class="milestone-story">
+            <div class="story-intro">
+              <p>On this special day, you went above and beyond to celebrate Bernard's achievement. Here's his heartfelt response to your incredible gesture of love...</p>
+            </div>
+            
+            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">Induction Day - Overwhelmed with Gratitude</span>
+              </div>
+              <div class="message-content">
+                <div class="message-preview">
+                  "Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me..."
+                </div>
+                <div class="message-full" style="display: none;">
+                  "Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me. 
+                  
+                  This once, I am lacking words to express the height of my gratitude and the depth of my love for you. You know I wouldn't have allowed you do this, but you have gone out of your way to do it. 
+
+                  Thank you so very much my treasure. I can only wish that our happily-ever-after come soonest. Meanwhile, I have all the ginger to make my life work for us. May God keep us to enjoy the fruits of our investments in this relationship. 
+
+                  I LOVE YOU BEYOND WORDS. I will never be tired of loving you, My treasure."
+                </div>
+              </div>
+              <div class="expand-btn">Click to read full message</div>
+              <div class="message-heart">🏆</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="milestone-achievement">
+          <div class="achievement-badge">
+            <div class="badge-icon">🌙</div>
+            <div class="achievement-title">Evening Under the Stars</div>
+            <div class="achievement-subtitle">A Perfect Moment of Peace</div>
+          </div>
+          
+          <div class="milestone-story">
+            <div class="story-intro">
+              <p>Sometimes the most beautiful milestones aren't grand events, but quiet moments that define love...</p>
+            </div>
+            
+            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">After a Beautiful Evening Together</span>
+              </div>
+              <div class="message-content">
+                <div class="message-preview">
+                  "What a beautiful evening we shared. Sitting out in the calm refreshing breeze of the night, with the fire flies flashing their subtle and yet lovely lemon lights, mosquitos massaging our feet, and our hands locked in a sweet bond of oneness..."
+                </div>
+                <div class="message-full" style="display: none;">
+                  "What a beautiful evening we shared. Sitting out in the calm refreshing breeze of the night, with the fire flies flashing their subtle and yet lovely lemon lights, mosquitos massaging our feet, and our hands locked in a sweet bond of oneness. How else do one define peace? I love you my treasure. Happy study dearest."
+                </div>
+              </div>
+              <div class="expand-btn">Click to read full message</div>
+              <div class="message-heart">🌌</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="milestone-achievement">
+          <div class="achievement-badge">
+            <div class="badge-icon">💌</div>
+            <div class="achievement-title">The Power of Words</div>
+            <div class="achievement-subtitle">When Your Message Healed His Soul</div>
+          </div>
+          
+          <div class="milestone-story">
+            <div class="story-intro">
+              <p>Your simple check-in message had the power to transform Bernard's entire day...</p>
+            </div>
+            
+            <div class="message-card response-card milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">You</span>
+                <span class="context">Sweet Daily Check-in</span>
+              </div>
+              <div class="message-content">
+                "My sunshine, how is your day going? Just checking up on my darling sweetheart that I love so much. I will come over, to have a glimpse of my heart's handsome face. Don't worry, my breath won't cease. It hasn't done so today. Please if you happen to reach Choba, get tigernut and dates for me Nkem. I love u so much"
+              </div>
+              <div class="message-heart">☀️</div>
+            </div>
+            
+            <div class="message-card bernard-msg milestone-msg" onclick="expandMilestone(this)">
+              <div class="message-header">
+                <span class="sender">Bernard</span>
+                <span class="context">The Healing Power of Your Love</span>
+              </div>
+              <div class="message-content">
+                <div class="message-preview">
+                  "My love, your text went straight into my heart of hearts. It traveled faster than the speed of light, with an energy nuclear weapons can only dream about. But I am rather surprised that something that quick and charged, could exert such a calming effect..."
+                </div>
+                <div class="message-full" style="display: none;">
+                  "My love, your text went straight into my heart of hearts. It traveled faster than the speed of light, with an energy nuclear weapons can only dream about. But I am rather surprised that something that quick and charged, could exert such a calming effect on my whole body to the point that all the day's stress were relieved in a second. For real, even my shower haven't brought me such relief. I'm more than glad to hear from you, and more so, to know you are having peaceful day. Thanks to your Superman for saving the day."
+                </div>
+              </div>
+              <div class="expand-btn">Click to read full message</div>
+              <div class="message-heart">⚡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="journey-section" id="surprise"></div>
     </div>
-  </div>
 
-  <div class="conversation-container">
-    <div class="conversation-title">🌅 Beautiful Mornings</div>
-    <div class="message-container bernard-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">B</div>
-        <div>Bernard</div>
-      </div>
-      <div class="message-text">
-        Today began beautifully; the Holy Mass, the melodious hymns, and a heart-warming view of you. Good morning Obim. You are beautiful. Have a wonderful day.
-        <span class="interactive-heart" onclick="pulseHeart(this)">☀️</span>
-      </div>
-    </div>
-
-    <div class="message-container uzoma-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">U</div>
-        <div>Uzoma</div>
-      </div>
-      <div class="message-text">
-        Awww. What a sweet message from my sweetest guy. My heart beat faster when I caught a glimpse of U. U looked like a cute baby. I so can't wait to carry a mini carbon copy of U. Tanks a million my soulmate. Have a beautiful day too. I love U, always.
-        <span class="interactive-heart" onclick="pulseHeart(this)">👶</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CHUNK 4: Milestones Section -->
-<div class="journey-section" id="milestones">
-  <div class="section-header">
-    <h2 class="section-title">🎓 Milestones</h2>
-    <p class="section-subtitle">The unforgettable days that shaped our forever</p>
-  </div>
-
-  <div class="conversation-container">
-    <div class="conversation-title">🎉 Induction Day</div>
-    <div class="message-container bernard-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">B</div>
-        <div>Bernard</div>
-      </div>
-      <div class="message-text">
-        Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me. This once, I am lacking words to express the height of my gratitude and the depth of my love for you. You know I wouldn’t have allowed you do this, but you have gone out of your way to do it. Thank you so very much my treasure. I can only wish that our happily-ever-after comes soonest. Meanwhile, I have all the ginger to make my life work for us. May God keep us to enjoy the fruits of our investments in this relationship. I LOVE YOU BEYOND WORDS. I will never be tired of loving you, My treasure.
-        <span class="interactive-heart" onclick="pulseHeart(this)">💐</span>
-      </div>
-    </div>
-
-    <div class="message-container uzoma-message">
-      <div class="message-header">
-        <div class="icon" onclick="pulseHeart(this)">U</div>
-        <div>Uzoma</div>
-      </div>
-      <div class="message-text">
-        Judith, I'm close to tears right now. What have I done that God decided to bless me with such a rare queen like yourself? Today, you bankrupted your finance, exhausted your strength, overlaboured your foot, employed your creativity all to celebrate me. This once, I am lacking words to express the height of my gratitude and the depth of my love for you. You know I wouldn’t have allowed you do this, but you have gone out of your way to do it. Thank you so very much my treasure. I can only wish that our happily-ever-after comes soonest. Meanwhile, I have all the ginger to make my life work for us. May God keep us to enjoy the fruits of our investments in this relationship. I LOVE YOU BEYOND WORDS. I will never be tired of loving you, My treasure.
-        <span class="interactive-heart" onclick="pulseHeart(this)">🌟</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CHUNK 5: Special Surprise Section -->
-<div class="journey-section" id="surprise">
-  <div class="section-header">
-    <h2 class="section-title">✨ Special Surprise</h2>
-    <p class="section-subtitle">A heartfelt promise from me to you</p>
-  </div>
-
-  <div class="surprise-section">
-    <div class="surprise-title">💍 Our Next Chapter</div>
-    <div class="surprise-content">
-      My love,
-      <br><br>
-      Through every word, every moment shared above, you've made my life a gallery of beautiful memories. I want us to keep writing this story, not only in messages but in every breath of our future together.
-      <br><br>
-      So here's my vow:
-      <br>
-      To stand by you, in all seasons.<br>
-      To laugh with you, in all joys.<br>
-      To build with you, in all dreams.
-      <br><br>
-      Our love is not a chapter. It's the whole book.
-      <br><br>
-      Let's write the next one, hand in hand. Always yours,<br>
-      <strong>— B 💖</strong>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-      <p>With all my heart, this was made just for you.</p>
-      <div class="signature">— Bernard</div>
-      <div class="next-chapter">More memories coming soon...</div>
-    </div>
-  </div>
-</div>
-
-<script>
-  function unlockTreasure() {
-    document.getElementById("coverPage").classList.add("hidden");
-    document.getElementById("mainContent").classList.add("visible");
-  }
-
-  function toggleMusic() {
-    let btn = document.getElementById("musicBtn");
-    if (!window.audio) {
-      window.audio = new Audio("Loreen_-_Tattoo.mp3");
-      window.audio.loop = true;
+.floating-hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
     }
-    if (window.audio.paused) {
-      window.audio.play();
-      btn.textContent = "🔇";
-    } else {
-      window.audio.pause();
-      btn.textContent = "🎵";
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.5rem;
+      animation: float 6s ease-in-out infinite;
     }
-  }
+    .heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+    .heart:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
+    .heart:nth-child(4) { top: 80%; left: 70%; animation-delay: 1s; }
+    .heart:nth-child(5) { top: 30%; left: 90%; animation-delay: 3s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    .footer {
+      background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    .footer p {
+      font-size: 1.3rem;
+      color: #6D28D9;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .signature {
+      font-size: 2rem;
+      color: #8B5CF6;
+      font-family: 'Brush Script MT', cursive;
+      margin: 1.5rem 0;
+      position: relative;
+      z-index: 2;
+      animation: signatureGlow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes signatureGlow {
+      from { text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+      to { text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6); }
+    }
+    
+    .next-chapter {
+      font-size: 1.1rem;
+      color: #7C3AED;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 25px;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      animation: nextChapterPulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes nextChapterPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .love-quote {
+      font-size: 1.1rem;
+      color: #6D28D9;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      border-left: 4px solid #8B5CF6;
+      position: relative;
+      z-index: 2;
+      font-style: italic;
+    }
+    
+    .love-quote::before {
+      content: '"';
+      font-size: 3rem;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      color: #A855F7;
+      opacity: 0.5;
+    }
+    
+    .love-quote::after {
+      content: '"';
+      font-size: 3rem;
+      position: absolute;
+      bottom: -20px;
+      right: 10px;
+      color: #A855F7;
+      opacity: 0.5;
+    }
+    
+    .decorative-element {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.3;
+      animation: decorativeFloat 4s ease-in-out infinite;
+    }
+    
+    .decorative-element.top-left {
+      top: 20px;
+      left: 20px;
+    }
+    
+    .decorative-element.bottom-right {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    @keyframes decorativeFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    
+    .eternal-promise {
+      background: linear-gradient(45deg, #8B5CF6, #A855F7);
+      color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      margin: 2rem 0;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    }
+    
+    .eternal-promise h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .eternal-promise p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .interactive-heart {
+      font-size: 2rem;
+      color: #E879F9;
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    
+    .interactive-heart:hover {
+      transform: scale(1.3);
+      color: #F472B6;
+    }
+    
+    .interactive-heart.clicked {
+      animation: heartExplode 0.6s ease-out;
+    }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    @keyframes heartExplode {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.5); color: #F472B6; }
+      100% { transform: scale(1); }
+    }
 
-  function showSection(id) {
-    document.querySelectorAll(".timeline-btn").forEach(btn => btn.classList.remove("active"));
-    document.querySelectorAll(".journey-section").forEach(section => section.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-    event.target.classList.add("active");
-  }
+.floating-hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.5rem;
+      animation: float 6s ease-in-out infinite;
+    }
+    .heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+    .heart:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
+    .heart:nth-child(4) { top: 80%; left: 70%; animation-delay: 1s; }
+    .heart:nth-child(5) { top: 30%; left: 90%; animation-delay: 3s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    
+    .footer {
+      background: linear-gradient(135deg, #F3E8FF, #E9D5FF);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    .footer p {
+      font-size: 1.3rem;
+      color: #6D28D9;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .signature {
+      font-size: 2rem;
+      color: #8B5CF6;
+      font-family: 'Brush Script MT', cursive;
+      margin: 1.5rem 0;
+      position: relative;
+      z-index: 2;
+      animation: signatureGlow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes signatureGlow {
+      from { text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+      to { text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 30px rgba(139, 92, 246, 0.6); }
+    }
+    
+    .next-chapter {
+      font-size: 1.1rem;
+      color: #7C3AED;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 25px;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      animation: nextChapterPulse 3s ease-in-out infinite;
+    }
+    
+    @keyframes nextChapterPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .love-quote {
+      font-size: 1.1rem;
+      color: #6D28D9;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      border-left: 4px solid #8B5CF6;
+      position: relative;
+      z-index: 2;
+      font-style: italic;
+    }
+    
+    .love-quote::before {
+      content: '"';
+      font-size: 3rem;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      color: #A855F7;
+      opacity: 0.5;
+    }
+    
+    .love-quote::after {
+      content: '"';
+      font-size: 3rem;
+      position: absolute;
+      bottom: -20px;
+      right: 10px;
+      color: #A855F7;
+      opacity: 0.5;
+    }
+    
+    .decorative-element {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.3;
+      animation: decorativeFloat 4s ease-in-out infinite;
+    }
+    
+    .decorative-element.top-left {
+      top: 20px;
+      left: 20px;
+    }
+    
+    .decorative-element.bottom-right {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    @keyframes decorativeFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    
+    .eternal-promise {
+      background: linear-gradient(45deg, #8B5CF6, #A855F7);
+      color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      margin: 2rem 0;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    }
+    
+    .eternal-promise h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .eternal-promise p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .interactive-heart {
+      font-size: 2rem;
+      color: #E879F9;
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 10px;
+      transition: all 0.3s ease;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    
+    .interactive-heart:hover {
+      transform: scale(1.3);
+      color: #F472B6;
+    }
+    
+    .interactive-heart.clicked {
+      animation: heartExplode 0.6s ease-out;
+    }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    @keyframes heartExplode {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.5); color: #F472B6; }
+      100% { transform: scale(1); }
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .card-container {
+        width: 98%;
+        margin: 1rem auto;
+        border-radius: 15px;
+        min-height: 90vh;
+      }
+      
+      .cover-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .cover-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .treasure-chest {
+        font-size: 6rem;
+        margin: 1.5rem 0;
+      }
+      
+      .unlock-instruction {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+      
+      .header {
+        padding: 1.5rem 1rem;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .header .subtitle {
+        font-size: 1rem;
+      }
+      
+      .timeline-nav {
+        padding: 1rem 0.5rem;
+        gap: 0.5rem;
+      }
+      
+      .timeline-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+      }
+      
+      .music-controls {
+        top: 15px;
+        right: 15px;
+      }
+      
+      .music-toggle {
+        font-size: 1.2rem;
+        padding: 0.4rem;
+      }
+      
+      .floating-hearts .heart {
+        font-size: 1.2rem;
+      }
+      
+      .footer {
+        padding: 2rem 1rem;
+      }
+      
+      .footer p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .love-quote {
+        font-size: 1rem;
+        margin: 1.5rem 0;
+        padding: 1rem;
+      }
+      
+      .eternal-promise {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
+      }
+      
+      .eternal-promise h3 {
+        font-size: 1.3rem;
+      }
+      
+      .eternal-promise p {
+        font-size: 1rem;
+      }
+      
+      .signature {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+      }
+      
+      .next-chapter {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+        margin-top: 1.5rem;
+      }
+      
+      .interactive-heart {
+        font-size: 1.5rem;
+        margin: 0 5px;
+      }
+      
+      .decorative-element {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .cover-title {
+        font-size: 2rem;
+      }
+      
+      .treasure-chest {
+        font-size: 5rem;
+      }
+      
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .timeline-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .timeline-btn {
+        width: 90%;
+        max-width: 250px;
+        margin: 0.2rem 0;
+      }
+      
+      .love-quote {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+      
+      .eternal-promise h3 {
+        font-size: 1.2rem;
+      }
+      
+      .signature {
+        font-size: 1.3rem;
+      }
+      
+      .next-chapter {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
+    }
+    
+    /* Accessibility and Performance Enhancements */
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+    
+    .focus-visible {
+      outline: 2px solid #8B5CF6;
+      outline-offset: 2px;
+    }
+    
+    /* Touch-friendly hover effects for mobile */
+    @media (hover: none) {
+      .timeline-btn:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+      }
+      
+      .interactive-heart:hover {
+        transform: none;
+      }
+      
+      .treasure-chest:hover {
+        transform: none;
+      }
+      
+      .music-toggle:hover {
+        transform: none;
+      }
+    }
+    
+    /* Reduced motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .card-container {
+        border: 2px solid #000;
+      }
+      
+      .timeline-btn {
+        border: 1px solid #000;
+      }
+      
+      .footer {
+        border-top: 2px solid #000;
+      }
 
-  function pulseHeart(el) {
-    el.classList.add("pulsing");
-    setTimeout(() => el.classList.remove("pulsing"), 600);
-  }
-</script>
+<!-- Journey Sections -->
+            <div class="journey-section active" id="dreamsHope">
+                <div class="section-header">
+                    <h2>Dreams & Hope</h2>
+                    <p>Where our story began to unfold...</p>
+                </div>
+                <div class="message-card">
+                    <div class="message-header">
+                        <span class="sender">My Love</span>
+                        <span class="context">Early dreams</span>
+                    </div>
+                    <div class="message-content">
+                        "I dream of a future where we wake up together every morning, sharing coffee and planning our adventures..."
+                    </div>
+                    <div class="message-heart">💜</div>
+                </div>
+                <div class="message-card bernard-msg">
+                    <div class="message-header">
+                        <span class="sender">Bernard</span>
+                        <span class="context">Promise made</span>
+                    </div>
+                    <div class="message-content">
+                        "With you, every dream feels possible. I promise to be your partner in all the adventures life brings us."
+                    </div>
+                    <div class="message-heart">💙</div>
+                </div>
+            </div>
+
+            <div class="journey-section" id="holidays">
+                <div class="section-header">
+                    <h2>Holiday Magic</h2>
+                    <p>Celebrating love through the seasons...</p>
+                </div>
+                <div class="message-card">
+                    <div class="message-header">
+                        <span class="sender">My Love</span>
+                        <span class="context">Christmas morning</span>
+                    </div>
+                    <div class="message-content">
+                        "The best gift under the tree is having you here with me. Every holiday becomes magical when shared with you."
+                    </div>
+                    <div class="message-heart">🎄</div>
+                </div>
+            </div>
+
+            <div class="journey-section" id="dailyLove">
+                <div class="section-header">
+                    <h2>Daily Love</h2>
+                    <p>The beautiful ordinary moments...</p>
+                </div>
+                <div class="message-card bernard-msg">
+                    <div class="message-header">
+                        <span class="sender">Bernard</span>
+                        <span class="context">Random Tuesday</span>
+                    </div>
+                    <div class="message-content">
+                        "Good morning, beautiful. Just wanted you to know that you're my first thought every day."
+                    </div>
+                    <div class="message-heart">☀️</div>
+                </div>
+            </div>
+
+            <div class="journey-section" id="milestones">
+                <div class="section-header">
+                    <h2>Milestones</h2>
+                    <p>Celebrating our achievements together...</p>
+                </div>
+                <div class="message-card">
+                    <div class="message-header">
+                        <span class="sender">My Love</span>
+                        <span class="context">Graduation day</span>
+                    </div>
+                    <div class="message-content">
+                        "We did it! Thank you for believing in me even when I didn't believe in myself."
+                    </div>
+                    <div class="message-heart">🎓</div>
+                </div>
+            </div>
+
+            <div class="journey-section" id="surprise">
+                <div class="section-header">
+                    <h2>Special Surprise</h2>
+                    <p>A moment that changed everything...</p>
+                </div>
+                <div class="eternal-promise">
+                    <h3>Forever & Always</h3>
+                    <p>Our love story continues to unfold with each passing day. Every chapter we write together is more beautiful than the last.</p>
+                </div>
+                <div class="love-quote">
+                    In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine.
+                </div>
+            </div>
+
+            <!-- Floating Hearts -->
+            <div class="floating-hearts">
+                <div class="heart">♥</div>
+                <div class="heart">♥</div>
+                <div class="heart">♥</div>
+                <div class="heart">♥</div>
+                <div class="heart">♥</div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="decorative-element top-left">✨</div>
+                <div class="decorative-element bottom-right">🌟</div>
+                <p>This is our story, written with love and sealed with forever...</p>
+                <div class="signature">With all my love, Always</div>
+                <div class="interactive-heart" onclick="heartClick(this)">💜</div>
+                <div class="interactive-heart" onclick="heartClick(this)">💙</div>
+                <div class="interactive-heart" onclick="heartClick(this)">💜</div>
+                <div class="next-chapter">Our adventure continues...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isPlaying = false;
+        
+        function unlockTreasure() {
+            const cover = document.getElementById('coverPage');
+            const main = document.getElementById('mainContent');
+            
+            cover.style.opacity = '0';
+            cover.style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+                cover.style.display = 'none';
+                main.classList.add('revealed');
+            }, 800);
+        }
+        
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.journey-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.timeline-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        function toggleMusic() {
+            const music = document.getElementById('backgroundMusic');
+            const btn = document.getElementById('musicBtn');
+            
+            if (isPlaying) {
+                music.pause();
+                btn.textContent = '🎵';
+                btn.classList.remove('playing');
+            } else {
+                music.play().catch(e => console.log('Audio play failed:', e));
+                btn.textContent = '🎼';
+                btn.classList.add('playing');
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        function heartClick(heart) {
+            heart.classList.add('clicked');
+            setTimeout(() => {
+                heart.classList.remove('clicked');
+            }, 600);
+        }
+        
+        // Add smooth scrolling
+        document.documentElement.classList.add('smooth-scroll');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add focus support for accessibility
+            document.querySelectorAll('button, .message-card').forEach(element => {
+                element.addEventListener('focus', function() {
+                    this.classList.add('focus-visible');
+                });
+                element.addEventListener('blur', function() {
+                    this.classList.remove('focus-visible');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
