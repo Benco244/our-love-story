@@ -1296,44 +1296,68 @@
         </div>
     </div>
 
-    <script>
-        let isPlaying = false;
-        
+
+
+      <script>
+        let isPlaying = false; // Global variable for music playback state
+
+        // Function to unlock the treasure chest and reveal main content
         function unlockTreasure() {
             const cover = document.getElementById('coverPage');
             const main = document.getElementById('mainContent');
-            
+
             cover.style.opacity = '0';
             cover.style.transform = 'scale(0.8)';
-            
+
             setTimeout(() => {
                 cover.style.display = 'none';
                 main.classList.add('revealed');
+
+                // Set the initial section ID based on your provided HTML
+                const initialSectionId = 'dreamsHope';
+
+                // Deactivate all sections and buttons first (ensures clean state)
+                document.querySelectorAll('.journey-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.querySelectorAll('.timeline-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                // Activate the initial section
+                const initialSection = document.getElementById(initialSectionId);
+                if (initialSection) {
+                    initialSection.classList.add('active');
+                }
+
+                // Activate the corresponding initial button by finding the button
+                // whose onclick attribute calls showSection with the initialSectionId
+                const initialButton = document.querySelector(`.timeline-btn[onclick*="showSection('${initialSectionId}')"]`);
+                if (initialButton) {
+                    initialButton.classList.add('active');
+                }
             }, 800);
         }
-        
+
+        // Function to show a specific section
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('.journey-section').forEach(section => {
                 section.classList.remove('active');
             });
-            
-            // Remove active class from all buttons
-            document.querySelectorAll('.timeline-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
+
             // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
         }
-        
+
+        // Function to toggle background music
         function toggleMusic() {
             const music = document.getElementById('backgroundMusic');
             const btn = document.getElementById('musicBtn');
-            
+
             if (isPlaying) {
                 music.pause();
                 btn.textContent = '🎵';
@@ -1345,19 +1369,47 @@
             }
             isPlaying = !isPlaying;
         }
-        
+
+        // Function for heart click animation
         function heartClick(heart) {
             heart.classList.add('clicked');
             setTimeout(() => {
                 heart.classList.remove('clicked');
             }, 600);
         }
-        
+
         // Add smooth scrolling
         document.documentElement.classList.add('smooth-scroll');
-        
-        // Initialize
+
+        // Initialize - DOMContentLoaded ensures the HTML is fully loaded before running script
         document.addEventListener('DOMContentLoaded', function() {
+            // Event listener for the Treasure Chest click to reveal main content
+            const treasureChest = document.querySelector('.treasure-chest');
+            if (treasureChest) {
+                treasureChest.addEventListener('click', unlockTreasure);
+            }
+
+            // Event listeners for Timeline Navigation Buttons
+            document.querySelectorAll('.timeline-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove 'active' from all timeline buttons first
+                    document.querySelectorAll('.timeline-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    // Add 'active' to the clicked button
+                    this.classList.add('active');
+
+                    // Get target ID from onclick attribute (e.g., showSection('sectionId'))
+                    const onclickAttr = this.getAttribute('onclick');
+                    const match = onclickAttr ? onclickAttr.match(/showSection\('([^']+)'\)/) : null;
+                    const targetId = match && match[1];
+
+                    if (targetId) {
+                        showSection(targetId);
+                    }
+                });
+            });
+
             // Add focus support for accessibility
             document.querySelectorAll('button, .message-card').forEach(element => {
                 element.addEventListener('focus', function() {
